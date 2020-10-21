@@ -2,7 +2,7 @@
     <p class="mb-6 text-black-lighter">Projects in descending order of "debt" (how much attention it needs)</p>
 
     @if ($hacktoberfest)
-        <a href="https://github.com/search?o=desc&q=label%3Ahacktoberfest+is%3Aopen+type%3Aissue+user%3Atightenco&s=created&type=Issues"
+        <a href="https://github.com/search?o=desc&q=label%3Ahacktoberfest+is%3Aopen+type%3Aissue+user%3Atighten&s=created&type=Issues"
            target="_blank"
            class="mb-6 px-4 py-3 bg-grey-blue hover:bg-halloween-orange no-underline rounded-lg text-black-lighter hover:text-white hover-pop">
             Hacktoberfest is here! 👻
@@ -32,9 +32,9 @@
         </tr>
     </thead>
 
-    <tbody class="bg-white rounded-b-lg">
+    <tbody class="bg-white rounded-b-lg divide-y divide-smoke">
         @foreach ($projects->sortByDesc(function ($project) { return $project->debtScore(); }) as $project)
-            <tr class="border-t border-smoke">
+            <tr class="">
                 <td class="p-4">
                     <a class="text-indigo no-underline text-md p-2 -mx-2"
                        href="#project-{{ $project->namespace }}-{{ $project->name }}">
